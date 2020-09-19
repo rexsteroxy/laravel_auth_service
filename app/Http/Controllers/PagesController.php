@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use App\Job;
+
 
 class PagesController extends Controller
 {
@@ -14,9 +14,9 @@ class PagesController extends Controller
     	return view('index');
     }
 
-    public function getAdminDashBoard()
-    {
-        return view('admin.index');
-    }
+   public function showTokenPage(){
+
+       return view('token');
+   }
     
 }

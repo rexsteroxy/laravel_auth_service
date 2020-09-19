@@ -31,13 +31,13 @@
 					<div class="col-md-8">
 						<div class="top_bar_item" style="color:green;">{{ Auth::user()->name }} &nbsp &nbsp</div>
 						<div class="top_bar_item" style="color:green;">{{ Auth::user()->email }} &nbsp &nbsp</div>
-						<a class='btn btn-danger' href="{{ route('logout') }}" style="color:white;"
+						<a class='btn btn-danger' href="{{ route('user.logout') }}" style="color:white;"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        <form id="logout-form" action="{{ route('user.logout') }}" method="get" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
 									

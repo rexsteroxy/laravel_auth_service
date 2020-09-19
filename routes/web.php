@@ -12,21 +12,23 @@
 */
 
 //Routes for the getting the whole web pages on view root folder
-
 Route::get('/', 'PagesController@getHome');
-Route::get('/admin', 'PagesController@getAdminDashBoard');
+Route::get('/showToken', 'PagesController@showTokenPage');
 
 
+//Routes  for users
+Route::get('/register', 'RegistrationController@create')->name('register.user');
+Route::post('/register', 'RegistrationController@store');
 
-Auth::routes();
-Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
-Route::get('/viewUsers','AdminController@showUsers');
-Route::get('/editUser', 'HomeController@editUser')->name('editUser');
-Route::post('/updateUser', 'UserController@updateUser')->name('updateUser');
+Route::get('/login', 'SessionsController@create')->name('login.user');
+Route::post('/login', 'SessionsController@store');
 
-
-
+Route::get('/user/logout', 'SessionsController@userLogout')->name('user.logout');
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+//Routes for Admins
     Route::prefix('admin')->group(function(){
         Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
         Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');

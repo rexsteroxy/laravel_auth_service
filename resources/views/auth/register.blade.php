@@ -18,7 +18,7 @@
                         <div class="col-md-3"></div>
 					    <div class="col-md-9">
                             <div class="panel-body">
-                            <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                            <form class="form-horizontal" method="POST" action="/register">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -77,7 +77,7 @@
                                     Register
                                 </button><br>
 
-                                <strong>Already Registered? Click Here <a href="{{ route('login') }}">Login</a></strong>
+                                <strong>Already Registered? Click Here <a href="{{ route('login.user') }}">Login</a></strong>
                             </div>
                         </div>
                     </form>
