@@ -18,7 +18,7 @@
                         <div class="col-md-3"></div>
 					    <div class="col-md-6">
                             <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="/home">
+                    <form class="form-horizontal" method="GET" action="{{ route('home') }}">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <!-- <label for="password" class="col-md-4 control-label">Password</label> -->
