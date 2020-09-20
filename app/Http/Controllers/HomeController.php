@@ -12,7 +12,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verifyToken']);
     }
 
     /**
@@ -22,10 +22,7 @@ class HomeController extends Controller
      */
 
 
-    public function showTokenPage(){
 
-        return view('token');
-    }
 
 
     public function index()

@@ -22,7 +22,7 @@ Route::post('/register', 'RegistrationController@store');
 
 Route::get('/login', 'SessionsController@create')->name('login');
 Route::post('/login', 'SessionsController@store');
-Route::get('/showToken', 'HomeController@showTokenPage');
+Route::get('/showToken', 'PagesController@showTokenPage');
 
 Route::get('/user/logout', 'SessionsController@userLogout')->name('user.logout');
 Route::get('/home', 'HomeController@index')->name('home');

@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class verifyUserToken
+class VerifyUserToken
 {
     /**
      * Handle an incoming request.
@@ -15,6 +15,12 @@ class verifyUserToken
      */
     public function handle($request, Closure $next)
     {
+
+            if (2 > 1) {
+           return redirect('/showToken');
+            }
+
+
         return $next($request);
     }
 }
