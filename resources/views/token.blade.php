@@ -18,6 +18,13 @@
                         <div class="col-md-3"></div>
 					    <div class="col-md-6">
                             <div class="panel-body">
+                            @if (session('response') )
+                <div class="alert alert-danger">
+                    {{ session('response') }}
+                </div>
+
+
+                @endif
                     <form class="form-horizontal" method="GET" action="{{ route('home') }}">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">

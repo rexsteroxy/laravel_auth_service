@@ -4,42 +4,51 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Http\Requests\UserRegisterStoreRequest;
 
 class RegistrationController extends Controller
 
 {
 
-
-    public function __construct(){
+     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
 
         $this->middleware('guest');
+
     }
 
 
-    //
-
-    public function create(){
+    
+     /**
+     * Show the application user register page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
 
         return view("auth.register");
+
     }
 
-    //
+    
+     /**
+     * Store user details to the database.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function store(UserRegisterStoreRequest $request)
+    {
 
-    public function store(Request $request){
-
-        //Validate the form
-
-        $this->validate(request(), [
-
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-
-        ]);
-
+        //validate the form
+        $validated = $request->validated();
 
         //Generate user token
-
         $generator = "1357902468abcdefghijklmnopqrstuvwxyz"; 
       
         $result = ""; 
@@ -50,28 +59,18 @@ class RegistrationController extends Controller
 
 
         //Create and save the user with uniqe token
-
-
-   $user =  User::create([
-        'name' =>$request->input('name'),
-        'email' => $request->input('email'),
-        'password' => bcrypt($request->input('password')),
-        'unique_token' => $result
-    ]);
-
-
-       
-
+        $user =  User::create([
+                'name' =>$request->input('name'),
+                'email' => $request->input('email'),
+                'password' => bcrypt($request->input('password')),
+                'unique_token' => $result
+            ]);
 
         // Sign the user in 
-
-
         auth()->login($user);
 
 
         //Redirect to the home page
-
-
         return redirect()->home();
 
     }

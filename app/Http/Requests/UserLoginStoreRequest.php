@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreJobApplication extends FormRequest
+class UserLoginStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,16 @@ class StoreJobApplication extends FormRequest
     public function rules()
     {
         return [
-            'cv' => 'required|max:5000|mimes:pdf' //required,file,5mb,pdf allowed
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'email.required' => 'Email is required!',
+            'password.required' => 'Password is required!'
         ];
     }
 }
