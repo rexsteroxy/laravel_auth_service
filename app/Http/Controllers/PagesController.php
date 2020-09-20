@@ -28,10 +28,10 @@ class PagesController extends Controller
 
             return redirect('/home');
            
-        }else{
+        }
             
             return view('token');
-        }
+        
 
     	
     }

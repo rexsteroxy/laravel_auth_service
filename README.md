@@ -40,7 +40,7 @@ The user is expected to input the correct token which will be given by the admin
 ## ADMIN BREAKDOWN
 * Admin also have its own seperate authentication system.
 
-        In Laravel 5.4 we actually can natively support multiple User models (Sometimes called MultiAuth). This means we can have different users and manage these users independently using the Native Auth Facades without any packages or plugins. A very good example of this is implemented in this test application, where admin is requered to login and get user unique token on every user log in. I used different tables to manage these types of users, and have different middleware and guards in place as well. Namely, guard("web")(which is default) and guard("admin) which I created.
+In Laravel 5.4 we actually can natively support multiple User models (Sometimes called MultiAuth). This means we can have different users and manage these users independently using the Native Auth Facades without any packages or plugins. A very good example of this is implemented in this test application, where admin is requered to login and get user unique token on every user log in. I used different tables to manage these types of users, and have different middleware and guards in place as well. Namely, guard("web")(which is default) and guard("admin) which I created.
 
 `NOTE: A default admin is created on running migration with default admin details (Name,Email,Password)`
 
