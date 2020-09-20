@@ -16,16 +16,30 @@ class PagesController extends Controller
 
 
     
-    public function getHome(){ 
+    public function getHome(){  
 
     	return view('index');
     }
 
+    public function showTokenPage(){  
 
-    public function showTokenPage(){
 
-        return view('token');
+        if (session()->get('token_verify')) {
+
+            return redirect('/home');
+           
+        }else{
+            
+            return view('token');
+        }
+
+    	
     }
+
+
+   
+
+   
 
   
     

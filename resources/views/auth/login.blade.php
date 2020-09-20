@@ -25,7 +25,7 @@
                     @endforeach
                 @endif
                
-                            <form class="form-horizontal" method="POST" action="/login">
+                            <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
                        
@@ -66,7 +66,7 @@
                                     Login
                                 </button><br>
 
-                                <strong>Not Registered? Click Here <a href="{{ route('register.user') }}">Login</a></strong>
+                                <strong>Not Registered? Click Here <a href="{{ route('register.user') }}">Register</a></strong>
                             </div>
                         </div>
                     </form>

@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Session;
 
 class VerifyUserToken
 {
@@ -16,11 +17,26 @@ class VerifyUserToken
     public function handle($request, Closure $next)
     {
 
-            if (2 > 1) {
-           return redirect('/showToken');
+
+        if(!auth()->user()->id == null) {
+
+            session(['verify_token' => $request->post('token')]);
+
+
+            $token = $request->session()->get('verify_token');
+
+         
+            if (auth()->user()->unique_token == $token  || session()->get('token_verify')) {
+
+                session(['token_verify' => true]);
+               
+                return $next($request);
             }
 
+        }
 
-        return $next($request);
+           return redirect('/showToken');
+
+       
     }
 }

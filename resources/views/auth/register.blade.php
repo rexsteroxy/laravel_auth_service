@@ -18,7 +18,7 @@
                         <div class="col-md-3"></div>
 					    <div class="col-md-9">
                             <div class="panel-body">
-                            <form class="form-horizontal" method="POST" action="/register">
+                            <form class="form-horizontal" method="POST" action="{{ route('register.user') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">

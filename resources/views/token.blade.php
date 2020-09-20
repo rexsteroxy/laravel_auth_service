@@ -18,13 +18,13 @@
                         <div class="col-md-3"></div>
 					    <div class="col-md-6">
                             <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="">
+                    <form class="form-horizontal" method="POST" action="/home">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <!-- <label for="password" class="col-md-4 control-label">Password</label> -->
 
                             <div class="col-md-6">
-                                <input placeholder="Enter Token" id="password" type="password" class="form-control" name="token" required>
+                                <input placeholder="Enter Token" id="token" type="password" class="form-control" name="token" required>
 
                                 @if ($errors->has('token'))
                                     <span class="help-block">

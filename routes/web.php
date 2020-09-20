@@ -23,9 +23,11 @@ Route::post('/register', 'RegistrationController@store');
 Route::get('/login', 'SessionsController@create')->name('login');
 Route::post('/login', 'SessionsController@store');
 Route::get('/showToken', 'PagesController@showTokenPage');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/contact', 'HomeController@contact')->name('contact');
 
 Route::get('/user/logout', 'SessionsController@userLogout')->name('user.logout');
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 
 

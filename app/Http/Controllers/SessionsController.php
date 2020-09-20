@@ -77,6 +77,8 @@ for ($i = 1; $i <= 8; $i++) {
     public function userLogout()
     {
         Auth::guard('web')->logout();
+
+        session()->forget('token_verify');
         return redirect('/');
     }
 }
