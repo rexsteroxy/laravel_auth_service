@@ -13,15 +13,16 @@
 
 //Routes for the getting the whole web pages on view root folder
 Route::get('/', 'PagesController@getHome');
-Route::get('/showToken', 'PagesController@showTokenPage');
+
 
 
 //Routes  for users
 Route::get('/register', 'RegistrationController@create')->name('register.user');
 Route::post('/register', 'RegistrationController@store');
 
-Route::get('/login', 'SessionsController@create')->name('login.user');
+Route::get('/login', 'SessionsController@create')->name('login');
 Route::post('/login', 'SessionsController@store');
+Route::get('/showToken', 'HomeController@showTokenPage');
 
 Route::get('/user/logout', 'SessionsController@userLogout')->name('user.logout');
 Route::get('/home', 'HomeController@index')->name('home');

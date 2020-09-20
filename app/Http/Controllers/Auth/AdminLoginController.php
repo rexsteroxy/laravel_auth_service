@@ -48,7 +48,7 @@ public function __construct()
 public function logout()
 {
     Auth::guard('admin')->logout();
-    return redirect('/');
+    return redirect('/admin/login'); 
 }
 
 

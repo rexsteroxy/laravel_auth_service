@@ -5,6 +5,7 @@
 <div class="services">
 		<div class="container">
 			<div class="row">
+           
 				<div class="col">
 					<div class="section_title service text-center trans_200">
 						<h2>User Login</h2>
@@ -18,6 +19,12 @@
                         <div class="col-md-3"></div>
 					    <div class="col-md-9">
                             <div class="panel-body">
+                            @if(count($errors) > 0)
+                    @foreach($errors->all as $error)
+                        <div class="alert alert-danger"><li>{{$error}}</li></div>
+                    @endforeach
+                @endif
+               
                             <form class="form-horizontal" method="POST" action="/login">
                         {{ csrf_field() }}
 

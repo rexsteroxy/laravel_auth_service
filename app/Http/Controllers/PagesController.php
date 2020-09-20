@@ -14,9 +14,6 @@ class PagesController extends Controller
     	return view('index');
     }
 
-   public function showTokenPage(){
-
-       return view('token');
-   }
+  
     
 }

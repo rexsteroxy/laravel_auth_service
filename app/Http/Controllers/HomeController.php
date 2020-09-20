@@ -20,6 +20,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function showTokenPage(){
+
+        return view('token');
+    }
+
+
     public function index()
     {
      

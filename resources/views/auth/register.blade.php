@@ -77,7 +77,7 @@
                                     Register
                                 </button><br>
 
-                                <strong>Already Registered? Click Here <a href="{{ route('login.user') }}">Login</a></strong>
+                                <strong>Already Registered? Click Here <a href="{{ route('login') }}">Login</a></strong>
                             </div>
                         </div>
                     </form>
