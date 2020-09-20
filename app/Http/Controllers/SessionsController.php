@@ -22,7 +22,16 @@ public function __construct(){
 
 
 
-    public function store(){
+    public function store(Request $request){
+
+ //validate the form
+ $this->validate($request, [
+    'email' => 'required|email',
+    'password' => 'required|min:6'
+
+]);
+
+
         // Attempt to authenticate the user
  if (! auth()->attempt(request(['email','password']))) {
 

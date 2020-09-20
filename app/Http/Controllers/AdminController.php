@@ -24,10 +24,9 @@ class AdminController extends Controller
     public function index()
     {
 
-        return view('admin');
+        $users = User::paginate(1);
+
+        return view('admin',compact('users'));
     }
-    public function showUsers(){ 
-        $users = User::paginate(50);
-        return view('jobs.users',compact('users'));
-    }
+   
 }
