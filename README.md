@@ -100,10 +100,11 @@ Used default laravel packages.
 
 
 ## Unit Test
-* Wrote a basic unit test to confirm application URL's return a 200 request.
-##  Command to run the application test
-`./vendor/phpunit/phpunit/phpunit
-` 
+* Wrote a basic feature test to confirm application URL's return a 200 request.
+* Wrote a basic unit test to confirm that the admin sees all users on the dashboard
+##  Steps to run the application test
+- Using your gitbash or terminal navigate to the root directory of this project and run the command below.
+- `./vendor/phpunit/phpunit/phpunit` 
 
 
 
