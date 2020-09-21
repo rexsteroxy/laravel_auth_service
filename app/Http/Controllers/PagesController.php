@@ -44,7 +44,7 @@ class PagesController extends Controller
         //check if token has been verified
         if (session()->get('token_verify')) {
 
-            return redirect('/home');
+            return redirect('/home')->with('response','Token Verified Successfully');
            
         }
             return view('token');

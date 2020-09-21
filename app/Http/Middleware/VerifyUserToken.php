@@ -38,7 +38,7 @@ class VerifyUserToken
 
         }
 
-           return redirect('/showToken')->with('response','Incorrect Token');
+           return redirect('/showToken');
 
        
     }
