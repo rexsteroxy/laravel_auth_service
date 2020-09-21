@@ -19,7 +19,7 @@ class PagesController extends Controller
     public function __construct()
     {
         //check auth except index
-        $this->middleware('auth',['except' => ['index']]);
+        $this->middleware('auth',['except' => ['getHome']]);
 
     }
 
