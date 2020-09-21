@@ -22,8 +22,6 @@ class RegistrationController extends Controller
 
     }
 
-
-    
      /**
      * Show the application user register page.
      *
@@ -36,7 +34,6 @@ class RegistrationController extends Controller
 
     }
 
-    
      /**
      * Store user details to the database.
      *
@@ -68,7 +65,6 @@ class RegistrationController extends Controller
 
         // Sign the user in 
         auth()->login($user);
-
 
         //Redirect to the home page
         return redirect()->home();

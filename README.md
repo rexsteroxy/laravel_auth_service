@@ -101,7 +101,12 @@ Used default laravel packages.
 
 ## Unit Test
 * Wrote a basic unit test to confirm application URL's return a 200 request.
+##  Command to run the application test
+`./vendor/phpunit/phpunit/phpunit
+` 
+
 
 
 ## Future Work
-Even though this is an MVC, the application can be refactured to make it an API service. This can be achieved by moving the web routes to the standard API routes, the logic for login and registration will be almost similiar but for the Token, a longer string can be generated.
+Even though this is an MVC, the application can be refactored to make it an API service. This can be achieved by moving the web routes to the standard API routes, the logic for login and registration will be almost similiar but for the Token, a longer string can be generated, after which the endpoints can now 
+be tested with PostMan or other API testing applications.

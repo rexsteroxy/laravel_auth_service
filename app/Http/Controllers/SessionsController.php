@@ -20,7 +20,6 @@ class SessionsController extends Controller
         $this->middleware('guest',['except' => ['logout','userLogout',]]);
     }
 
-    
      /**
      * Show the application login page.
      *
@@ -32,8 +31,6 @@ class SessionsController extends Controller
         return view("auth.login");
 
     }
-
-
 
      /**
      * Login feature.
@@ -53,34 +50,30 @@ class SessionsController extends Controller
                 return back()->with('response','Incorrect Credentials');
         }
 
-            // Revoke user token
-            $generator = "1357902468abcdefghijklmnopqrstuvwxyz"; 
-                
-            $token = ""; 
+        // Revoke user token
+        $generator = "1357902468abcdefghijklmnopqrstuvwxyz"; 
+            
+        $token = ""; 
 
-            for ($i = 1; $i <= 8; $i++) 
-            { 
-                $token .= substr($generator, (rand()%(strlen($generator))), 1); 
-            } 
+        for ($i = 1; $i <= 8; $i++) 
+        { 
+            $token .= substr($generator, (rand()%(strlen($generator))), 1); 
+        } 
 
 
-            // Update user token
-            $user = new User;
-            $user->unique_token = $token;
- 
-            $data = array(
-            'unique_token' => $user->unique_token 
-            );
-            User::where('id',auth()->user()->id)->update($data);
-            $user->update();
+        // Update user token
+        $user = new User;
+        $user->unique_token = $token;
 
-            return redirect('/showToken');
+        $data = array(
+        'unique_token' => $user->unique_token 
+        );
+        User::where('id',auth()->user()->id)->update($data);
+        $user->update();
+
+        return redirect('/showToken');
        
     }
-
-
-   
-
 
     public function userLogout()
     {

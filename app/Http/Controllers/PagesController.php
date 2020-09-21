@@ -9,8 +9,6 @@ use Auth;
 class PagesController extends Controller
 {
 
-
-
      /**
      * Create a new controller instance.
      *
@@ -23,7 +21,6 @@ class PagesController extends Controller
 
     }
 
-
      /**
      * Show the application index page.
      *
@@ -35,8 +32,6 @@ class PagesController extends Controller
         return view('index');
         
     }
-
-
 
      /**
      * Show the application token page.
