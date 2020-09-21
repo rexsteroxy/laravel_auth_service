@@ -90,12 +90,12 @@ Used default laravel packages.
 
 
 ## Use of best practice
-* Good naming conventions
-* Used named routes in my routing
-* Abstracted my input request validation from my controller to a seperate Request Class, thereby keeping my controller clean and simple.
-* Proper code comment
-* Proper code indentation
-* Used group routing when needed
+* Good naming convention.
+* Used named routes in my routing.
+* Abstracted input request validation from my controller to a seperate Request Class, thereby keeping the controller clean and simple.
+* Proper code comments.
+* Proper code indentation.
+* Used group routing when needed.
 
 
 ## Unit Test
