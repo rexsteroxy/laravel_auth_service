@@ -1,20 +1,22 @@
 
 # Laravel-Multiple-Authentication Service
 
-Laravel application with user registration/login, admin login and token generation for subsequent user actions. 
+A Laravel application with user registration/login, admin login and token generation for subsequent user actions. 
 This functionality helps to ensure a user is authenticated before using the application.
 
 ## Application Urls
 `Hosted on Heroku and a free database from db4free.net`
 
-[This test application is hosted onlin here](http://patricia-code-test.herokuapp.com/login)
+[This test application is hosted online here](http://patricia-code-test.herokuapp.com/login)
 
 
 ## User Story
-A user is able to register and login to perform user actions, but requires a verification token
+A two way multiple authentication system where a user and an admin is able to register and login to perform user and admin
+specific actions. A user requires a verification token
 from an admin in order to proceed with using the application functionality.
 
 This app enables a user to register, login, then get a token from an admin in order to see details and perform other actions.
+It also allows an Admin to have its own unique authentication.
 
 
 
@@ -40,9 +42,9 @@ The user is expected to input the correct token which will be given by the admin
 ## ADMIN BREAKDOWN
 * Admin also have its own seperate authentication system.
 
-In Laravel 5.4 we actually can natively support multiple User models (Sometimes called MultiAuth). This means we can have different users and manage these users independently using the Native Auth Facades without any packages or plugins. A very good example of this is implemented in this test application, where admin is requered to login and get user unique token on every user log in. I used different tables to manage these types of users, and have different middleware and guards in place as well. Namely, guard("web")(which is default) and guard("admin) which I created.
+In Laravel 5.4 we actually can natively support multiple User models (Sometimes called MultiAuth). This means we can have different users and manage these users independently using the Native Auth Facades without any packages or plugins. A very good example of this is implemented in this code test application, where admin is requered to login and get user unique token on every user log in. I used different tables to manage these types of users, and have different middleware and guards in place as well. Namely, guard("web")(which is default) and guard("admin) which I created.
 
-`NOTE: A default admin is created on running migration with default admin details (Name,Email,Password)`
+`NOTE: A default admin is created on running migration with default admin details (Email="superadmin@gmail.com", Password= "secret")`
 
 
 ![2020-09-20 13_35_05-admin](https://user-images.githubusercontent.com/38590494/93711428-2bd6c780-fb46-11ea-9e91-5c61570e7872.png)
@@ -51,7 +53,7 @@ In Laravel 5.4 we actually can natively support multiple User models (Sometimes 
 * Once Admin logs in successfully, Admin can now see all registed user details on the dashboard including the generated user token.
 ![2020-09-20 13_19_53-admin](https://user-images.githubusercontent.com/38590494/93711217-5de72a00-fb44-11ea-9666-20a70773af53.png)
 
-`I also implemented the Logout functionality for both users.`
+`I also implemented the Logout functionality for both admin and user.`
 
 ## Installation
 
@@ -87,6 +89,17 @@ $ php artisan serve
 Used default laravel packages.
 
 
+## Use of best practice
+* Good naming conventions
+* Used named routes in my routing
+* Abstracted my input request validation from my controller to a seperate Request Class, thereby keeping my controller clean and simple.
+* Proper code comment
+* Proper code indentation
+* Used group routing when needed
+
+
+## Unit Test
+* Wrote a basic unit test to confirm application URL's return a 200 request.
 
 
 ## Future Work
