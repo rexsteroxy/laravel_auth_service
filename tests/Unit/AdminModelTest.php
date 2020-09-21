@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Admin;
 use App\User;
 
-class TestAdminModel extends TestCase
+class AdminModelTest extends TestCase
 {
     
    
