@@ -93,6 +93,7 @@ Used default laravel packages.
 * Good naming convention.
 * Used named routes in my routing.
 * Abstracted input request validation from my controller to a seperate Request Class, thereby keeping the controller clean and simple.
+* Used middleware for user token verification.
 * Proper code comments.
 * Proper code indentation.
 * Used group routing when needed.
